@@ -8,7 +8,7 @@ variables:
   environmentName: 'r-notes'
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
-  pythonVersion: '3.9'
+  pythonVersion: '3.10.4'
 
 stages:
 - stage: Build
