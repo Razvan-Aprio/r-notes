@@ -1,4 +1,4 @@
-# Flask Web App Tutorial
+## A simple Notes app created in Python using the Flask framework
 
 ## Setup & Installtion
 

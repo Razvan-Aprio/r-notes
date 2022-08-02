@@ -27,6 +27,7 @@ stages:
         python -m venv antenv
         source antenv/bin/activate
         python -m pip install --upgrade pip
+        python -m pip install --upgrade flask flask-login flask-sqlalchemy
         pip install setup
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
