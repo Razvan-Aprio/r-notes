@@ -1,4 +1,3 @@
-from sre_constants import SUCCESS
 from flask import Blueprint #define that this file is a blueprint of our application (contains routes, urls, etc.)
 from flask import render_template #import the render_template function
 from flask import request #import request function to enable redirects to form requests

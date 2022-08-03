@@ -8,7 +8,7 @@ variables:
   environmentName: 'r-notes'
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
-  pythonVersion: '3.10.4'
+  pythonVersion: '3.10'
 
 stages:
 - stage: Build
@@ -29,7 +29,7 @@ stages:
         python -m pip install --upgrade pip
         python -m pip install --upgrade flask flask-login Flask-SQLAlchemy
         pip install setup
-        pip install -r requirements.txt
+        pip3 install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 

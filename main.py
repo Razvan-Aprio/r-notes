@@ -1,4 +1,4 @@
-from website import create_app #import anything that is definde in website folder, for example create_app function
+from website import create_app #import anything that is defined in website folder, for example create_app function
 
 app = create_app()
 
