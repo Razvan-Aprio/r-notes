@@ -27,7 +27,9 @@ stages:
         python -m venv antenv
         source antenv/bin/activate
         python -m pip install --upgrade pip
-        python -m pip install --upgrade flask flask-login Flask-SQLAlchemy
+        python -m pip install flask
+        python -m pip install SQLAlchemy 
+        python -m pip install Flask-SQLAlchemy
         pip install setup
         pip3 install setup
         pip install -r requirements.txt
