@@ -3,4 +3,4 @@ from website import create_app #import anything that is defined in website folde
 app = create_app()
 
 if __name__ == '__main__': #only if we run this file (not import it) we will execute the following:
-    app.run(port=8000,debug=True) #run Flask application, debut=True re-runs webserver on code change 
+    app.run(port=80,debug=True) #run Flask application, debut=True re-runs webserver on code change 
