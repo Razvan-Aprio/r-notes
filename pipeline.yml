@@ -29,6 +29,8 @@ stages:
         python -m pip install --upgrade pip
         python -m pip install --upgrade flask flask-login Flask-SQLAlchemy
         pip install setup
+        pip3 install setup
+        pip install -r requirements.txt
         pip3 install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
