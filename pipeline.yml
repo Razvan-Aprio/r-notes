@@ -26,12 +26,12 @@ stages:
     - script: |
         python -m venv antenv
         source antenv/bin/activate
+        pip install setup
         python -m pip install --upgrade pip
         python -m pip install flask
         python -m pip install flask_login 
-        python -m pip install flask-SQLAlchemy
-        pip install setup
-#       pip install -r requirements.txt
+        python -m pip install Flask-SQLAlchemy
+        pip install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
