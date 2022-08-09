@@ -14,6 +14,7 @@ views = Blueprint('views', __name__) #define a blueprint
 #to define a view:
 @views.route('/', methods=['GET', 'POST']) #the home() function (defined below) will run whenever we go to our "/" route (homepage)
 @login_required
+
 def home():
 
     if request.method == 'POST':
@@ -29,7 +30,9 @@ def home():
 
     return render_template("home.html", user=current_user)
 
+
 @views.route('/delete-note', methods=['POST'])
+
 def delete_note():
     note = json.loads(request.data)
     noteId = note['noteId']

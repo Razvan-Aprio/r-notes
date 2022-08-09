@@ -11,6 +11,7 @@ from flask_login import current_user, login_user, login_required, logout_user
 auth = Blueprint('auth', __name__) #define a blueprint
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
+
 def sign_up():
     if request.method == 'POST':
         email = request.form.get('email')
@@ -53,6 +54,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully !', category='success')
                 login_user(user, remember=True) #using login_user object from flask_login module
+                return render_template("home.html", user=current_user)
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
