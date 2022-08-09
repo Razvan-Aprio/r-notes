@@ -39,12 +39,12 @@ stages:
         rootFolderOrFile: '$(projectRoot)'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/r-notes-$(Build.BuildId).zip
         replaceExistingArchive: true
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    - upload: $(Build.ArtifactStagingDirectory)/r-notes-$(Build.BuildId).zip
       displayName: 'Upload package'
-      artifact: drop
+      artifact: app_artifact
 
 - stage: Deploy
   displayName: 'Deploy Web App'
@@ -70,7 +70,7 @@ stages:
             inputs:
               azureSubscription: 'r-notes-web-app-resource'
               appType: 'webAppLinux'
-              appName: 'r-notes'
-              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              appName: '$(webAppName)'
+              package: '$(Pipeline.Workspace)/app_artifact/r-notes-$(Build.BuildId).zip'
               runtimeStack: 'PYTHON|3.9'
               startUpCommand: 'python main.py'

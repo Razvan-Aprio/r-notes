@@ -12,7 +12,7 @@ from flask import jsonify
 views = Blueprint('views', __name__) #define a blueprint
 
 #to define a view:
-@views.route('/', methods=['GET', 'POST']) #this function will run whenever we go to our homepage ( "/" route)
+@views.route('/', methods=['GET', 'POST']) #the home() function (defined below) will run whenever we go to our "/" route (homepage)
 @login_required
 def home():
 
@@ -26,7 +26,6 @@ def home():
             db.session.add(new_note)
             db.session.commit()
             flash('Note Added !', category='success')
-
 
     return render_template("home.html", user=current_user)
 

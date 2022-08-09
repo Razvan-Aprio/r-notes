@@ -10,6 +10,7 @@ DB_NAME = 'database.db'
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'qwertyuiop' # encrypt/secure cookies and session data
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}' # my sql database is located the 'website' folder. f string - when you put f beforehand you can use the squiggly brackets {}
     db.init_app(app)
