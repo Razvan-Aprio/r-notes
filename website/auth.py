@@ -2,8 +2,8 @@ from flask import Blueprint #define that this file is a blueprint of our applica
 from flask import render_template #import the render_template function
 from flask import request #import request function to enable redirects to form requests
 from flask import flash #import flash function for alerting if input is not vaild
-from .models import User
-from werkzeug.security import generate_password_hash, check_password_hash
+from .models import User #import User from db models
+from werkzeug.security import generate_password_hash, check_password_hash #import hashing from flask - a function that has no inverse
 from flask import redirect, url_for
 from . import db
 from flask_login import current_user, login_user, login_required, logout_user
@@ -31,7 +31,6 @@ def sign_up():
         elif len(password1) < 7:
             flash('Password must be at least 7 characters', category='error')
         else:
-
             new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
